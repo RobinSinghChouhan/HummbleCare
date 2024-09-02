@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      gridColumn: {
+        'span-17':'span 17 / span 17'
+      },
+      gridTemplateColumns: {
+        '20': 'repeat(20,minmax(0,1fr))'
+      },
       fontFamily: {
         roboto: ['Roboto', 'sans'],
       },
