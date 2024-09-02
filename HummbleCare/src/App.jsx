@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -10,12 +10,25 @@ import { RoundedImg } from "./components/roundedImg";
 import { RoundedDiv } from "./components/RoundedDiv";
 import { CareTile } from "./components/CareTile";
 import { ButtonTile } from "./components/ButtonTile";
+import ImageCarousel from "./components/RoundedImgCarousel";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [faq1,setFaq1] = useState("hidden");
-  const [faq2,setFaq2] = useState("hidden");
-  const [faq3,setFaq3] = useState("hidden");
+  const [imgCount, setImgCount] = useState(1);
+  const [faq1, setFaq1] = useState("hidden");
+  const [faq2, setFaq2] = useState("hidden");
+  const [faq3, setFaq3] = useState("hidden");
+
+  useEffect(()=>{
+    const interval = setInterval( async()=>{
+      await setImgCount(imgCount=>Math.floor((imgCount+1)%8));
+      console.log(imgCount);
+    },2000)
+    return () => clearInterval(interval);
+  },[imgCount])
+
+  
+
   const services = [
     {
       icon: (
@@ -99,8 +112,8 @@ function App() {
       description:
         "Ask about our care services and how we can assist your needs.",
       buttonText: "Inquire Now",
-      buttonLink: ""
-      },
+      buttonLink: "",
+    },
     {
       icon: (
         <svg
@@ -122,15 +135,53 @@ function App() {
       description:
         "Collaborate with us to enhance core services for the elderly and disabled.",
       buttonText: "Partner with Us",
-      buttonLink: ""
-      },
+      buttonLink: "",
+    },
   ];
+
+  const faqs = [
+    {
+      title: "Where are you located?",
+      description:
+        "HummbleCare operates from Point Cook in Victoria, Melbourne. You can fill up the google form in order to get more deatiled information.",
+    },
+    {
+      title: "How do you ensure quality care?",
+      description:
+        "Our team of dedicated professionals is trained to provide compassionate and personalized care, ensuring the well-being of the elderly and disabled.",
+    },
+    {
+      title: "What are your areas of specialization?",
+      description:
+        "We specialize in a range of care services, including daily living assistance, medical support, and emotional well-being for the elderly and disabled.",
+    },
+  ];
+
+  const images = [
+    "src/assets/nurse1.png",
+    "src/assets/nurse2.png",
+    "src/assets/nurse3.png",
+    "src/assets/nurse4.png",
+    "src/assets/nurse5.png",
+    "src/assets/nurse6.png",
+    "src/assets/nurse7.png",
+    "src/assets/nurse8.png"
+  ]
+
+  // setInterval(()=>{
+  //   // console.log("Hello");
+  //   setImgCount(imgCount=>(imgCount+1))
+  //   console.log(imgCount+"aaa");
+  // },2000)
 
   return (
     <>
-      <div>
-        <div className="text-3xl bg-red-500 rounded-full w-16 h-16"></div>
-        <div className="mt-10 flex justify-between">
+      <div className="m-5">
+        <div className="text-3xl rounded-full w-16 h-16">
+          <img
+          src="src/assets/logo.png"/>
+        </div>
+        <div className="mt-5 flex justify-between">
           <div className="flex items-center">
             <div>
               <SquibblyLines />
@@ -138,12 +189,12 @@ function App() {
               <SquibblyLines />
             </div>
           </div>
-          <RoundedImgAbstract />
+          <RoundedImgAbstract imgLocation={"src/assets/nurse1.png"}/>
         </div>
         <div className="text-5xl mt-5 mb-5 text-start font-bold font-roboto">
           Caring for Your Loved Ones with Dedication
         </div>
-        <RoundedImgAbstract />
+        <RoundedImgAbstract imgLocation="src/assets/nurse_img.jpg"/>
         <div className="flex mt-14">
           <RoundedButton />
           <div className="w-2" />
@@ -154,7 +205,8 @@ function App() {
           services for the elderly and disabled, ensuring they receive the
           attention and support they deserve.
         </div>
-        <RoundedImg />
+        <ImageCarousel/>
+        
         <div className="mt-3" />
         <RoundedDiv />
         <div className="flex font-bold font-roboto mt-16 text-green-500">
@@ -207,93 +259,204 @@ function App() {
             icon={inquiries[1].icon}
             title={inquiries[1].title}
             description={inquiries[1].description}
-              buttonText = {inquiries[1].buttonText}
+            buttonText={inquiries[1].buttonText}
           />
         </div>
-        <div className="mt-16 text-start font-bold">
+
+      <div className="mt-16"/>
+      <RoundedImg imgLocation="src/assets/nurse_img.jpg"/>
+        <div className="mt-8 text-start font-bold text-green-500">
           COMMON QUESTIONS
         </div>
         <div className="text-4xl font-bold text-start mt-2">
           Frequently Asked Questions
         </div>
 
-
-        <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
-  <h2 id="accordion-flush-heading-1">
-    <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1"
-    onClick={()=>{
-      if(faq1 == "hidden")
-      {
-        setFaq1("");
-      }else{
-        setFaq1("hidden");
-      }
-    }}>
-      <span>What is Flowbite?</span>
-      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-      </svg>
-    </button>
-  </h2>
-  <div id="accordion-flush-body-1" className={faq1} aria-labelledby="accordion-flush-heading-1">
-    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-      <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-    </div>
-  </div>
-  <h2 id="accordion-flush-heading-2">
-    <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2"
-    onClick={()=>{
-      if(faq2 == "hidden")
-      {
-        setFaq2("");
-      }else{
-        setFaq2("hidden");
-      }
-    }}>
-      <span>Is there a Figma file available?</span>
-      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-      </svg>
-    </button>
-  </h2>
-  <div id="accordion-flush-body-2" className={faq2} aria-labelledby="accordion-flush-heading-2">
-    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-      <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-    </div>
-  </div>
-  <h2 id="accordion-flush-heading-3">
-    <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3"
-    onClick={()=>{
-      if(faq3 == "hidden")
-      {
-        setFaq3("");
-      }else{
-        setFaq3("hidden");
-      }
-    }}>
-      <span>What are the differences between Flowbite and Tailwind UI?</span>
-      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-      </svg>
-    </button>
-  </h2>
-  <div id="accordion-flush-body-3" className={faq3} aria-labelledby="accordion-flush-heading-3">
-    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-      <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-        <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-        <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-
+        <div
+          className="mt-5"
+          id="accordion-flush"
+          data-accordion="collapse"
+          data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+          data-inactive-classes="text-gray-500 dark:text-gray-400"
+        >
+          <h2 id="accordion-flush-heading-1">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              data-accordion-target="#accordion-flush-body-1"
+              aria-expanded="true"
+              aria-controls="accordion-flush-body-1"
+              onClick={() => {
+                if (faq1 == "hidden") {
+                  setFaq1("");
+                } else {
+                  setFaq1("hidden");
+                }
+              }}
+            >
+              <span>{faqs[0].title}</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="accordion-flush-body-1"
+            className={faq1}
+            aria-labelledby="accordion-flush-heading-1"
+          >
+            <div className="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p className="mb-2 text-gray-500 dark:text-gray-400 text-start">
+                {faqs[0].description}
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-2">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              data-accordion-target="#accordion-flush-body-2"
+              aria-expanded="false"
+              aria-controls="accordion-flush-body-2"
+              onClick={() => {
+                if (faq2 == "hidden") {
+                  setFaq2("");
+                } else {
+                  setFaq2("hidden");
+                }
+              }}
+            >
+              <span>{faqs[1].title}</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="accordion-flush-body-2"
+            className={faq2}
+            aria-labelledby="accordion-flush-heading-2"
+          >
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400 text-start">
+                {faqs[1].description}
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-3">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              data-accordion-target="#accordion-flush-body-3"
+              aria-expanded="false"
+              aria-controls="accordion-flush-body-3"
+              onClick={() => {
+                if (faq3 == "hidden") {
+                  setFaq3("");
+                } else {
+                  setFaq3("hidden");
+                }
+              }}
+            >
+              <span>{faqs[2].title}</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="accordion-flush-body-3"
+            className={faq3}
+            aria-labelledby="accordion-flush-heading-3"
+          >
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400 text-start">
+                {faqs[2].description}
+              </p>             
+            </div>
+          </div>
+        </div>
+        <div className=" bg-green-200 mt-16 -m-5 text-center p-10 ">
+              <div className="text-gray-500 text-sm">
+                2024 HummbleCare. All rights reserved.
+              </div>
+              <div className="mt-8 text-sm">
+                Our Services
+              </div>
+              <div className="mt-5 text-sm">
+                Support
+              </div>
+              <div className="flex items-center justify-center">
+              <hr className="h-px my-5 bg-gray-300 border-0 w-24"/>
+              </div>
+              <div className="flex justify-center">
+              <svg
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+    >
+      <path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z" />
+    </svg>
+              <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      className="mx-5"
+    >
+      <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0014.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
+    </svg>
+    <svg
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+    >
+      <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" />
+      <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" />
+    </svg>
+              </div>
+        </div>
       </div>
     </>
   );

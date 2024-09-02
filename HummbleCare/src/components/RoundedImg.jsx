@@ -1,5 +1,9 @@
-export const RoundedImg = () => {
-    return <div className="h-72 bg-red-500 rounded-2xl">
-        Hello
+export const RoundedImg = ({imgLocation}) => {
+    return <div className="h-72 rounded-2xl overflow-hidden">
+        
+        <img
+        src={imgLocation}
+        className="w-full h-full object-cover"
+        />
     </div>
 }
