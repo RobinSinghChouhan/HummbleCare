@@ -11,9 +11,10 @@ import { RoundedDiv } from "./components/RoundedDiv";
 import { CareTile } from "./components/CareTile";
 import { ButtonTile } from "./components/ButtonTile";
 import ImageCarousel from "./components/RoundedImgCarousel";
+import { ShadowFormField } from "./components/ShadowFormField";
+import { BorderedImage } from "./components/BorderedImage";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [imgCount, setImgCount] = useState(1);
   const [faq1, setFaq1] = useState("hidden");
   const [faq2, setFaq2] = useState("hidden");
@@ -38,7 +39,7 @@ function App() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-6 stroke-green-500"
+          className="size-6 sm:size-10 stroke-green-500"
         >
           <path
             strokeLinecap="round"
@@ -55,7 +56,7 @@ function App() {
       icon: (
         <svg
           viewBox="0 0 448 512"
-          className="fill-green-500"
+          className="fill-green-500 sm:size-10"
           fill="currentColor"
           height="1.3em"
           width="1.3em"
@@ -75,7 +76,7 @@ function App() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-6 stroke-green-500"
+          className="size-6 stroke-green-500 sm:size-10"
         >
           <path
             strokeLinecap="round"
@@ -99,7 +100,7 @@ function App() {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          className="size-10 bg-green-500 p-2 stroke-white rounded-lg"
+          className="size-10 sm:size-16 bg-green-500 p-2 stroke-white rounded-lg"
         >
           <path
             stroke-linecap="round"
@@ -122,7 +123,7 @@ function App() {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          className="size-10 bg-green-500 p-2 stroke-white rounded-lg"
+          className="size-10 sm:size-16 bg-green-500 p-2 stroke-white rounded-lg"
         >
           <path
             stroke-linecap="round"
@@ -177,11 +178,14 @@ function App() {
   return (
     <>
       <div className="m-5">
-        <div className="text-3xl rounded-full w-16 h-16">
+        <div className="flex sm:w-full rounded-full w-16 h-16 justify-center">
           <img
-          src="src/assets/logo.png"/>
+          src="src/assets/logo.png"
+          className="flex justify-center sm:w-24 sm:h-24"/>
         </div>
-        <div className="mt-5 flex justify-between">
+        <div className="sm:grid sm:grid-cols-12 sm:mt-24 sm:px-10">
+        <div className="sm:col-span-7 sm:mr-16">
+        <div className="mt-5 sm:mt-0 flex justify-between">
           <div className="flex items-center">
             <div>
               <SquibblyLines />
@@ -191,70 +195,84 @@ function App() {
           </div>
           <RoundedImgAbstract imgLocation={"src/assets/nurse1.png"}/>
         </div>
-        <div className="text-5xl mt-5 mb-5 text-start font-bold font-roboto">
+        <div className="sm:text-7xl text-5xl sm:mt-16 mt-5 mb-5 sm:mb-16 text-start font-bold font-roboto">
           Caring for Your Loved Ones with Dedication
         </div>
         <RoundedImgAbstract imgLocation="src/assets/nurse_img.jpg"/>
-        <div className="flex mt-14">
+        <div className="flex mt-14 sm:mt-48">
           <RoundedButton />
-          <div className="w-2" />
+          <div className="w-2 sm:w-5" />
           <OutLinedButton />
         </div>
-        <div className="font-roboto mt-10 mb-10 text-start text-gray-700">
+        <div className="font-roboto mt-10 sm:mt-12 mb-10 text-start text-gray-700 text-lg">
           At HummbleCare, we provide compassionate and professional care
           services for the elderly and disabled, ensuring they receive the
           attention and support they deserve.
         </div>
+        </div>
+        <div className="sm:col-span-5">
         <ImageCarousel/>
-        
-        <div className="mt-3" />
+        <div className="mt-3 sm:mt-8" />
         <RoundedDiv />
-        <div className="flex font-bold font-roboto mt-16 text-green-500">
+        </div>
+        </div>
+
+<div className="sm:grid sm:grid-cols-20 mt-16 sm:mt-44 sm:px-10">
+  <div className="sm:col-span-12">
+  <div className="flex font-bold font-roboto sm:mt-0 text-green-500 sm:text-xl">
           Dedicated Support
         </div>
-        <div className="font-bold text-3xl text-start font-roboto mt-2">
+        <div className="font-bold text-3xl text-start font-roboto mt-2 sm:text-4xl">
           Comprehensive Care Services
         </div>
-        <div className="text-start mt-5 text-gray-700 font-roboto">
+        <div className="text-start mt-5 sm:mt-8 text-gray-700 font-roboto sm:text-lg">
           At HummbleCare, we provide unparalleled care services for the elderly
           and disabled, ensuring they receive the attention and support they
           deserve. Our dedicated team is here to offer personalized care around
           the clock.
         </div>
-        <div className="mt-10">
+        <div className="mt-10 sm:mt-16">
           <CareTile
             icon={services[0].icon}
             title={services[0].title}
             description={services[0].description}
           />
-          <div className="mt-8" />
+          <div className="mt-8 sm:mt-12" />
           <CareTile
             icon={services[1].icon}
             title={services[1].title}
             description={services[1].description}
           />
-          <div className="mt-8" />
+          <div className="mt-8 sm:mt-12" />
           <CareTile
             icon={services[2].icon}
             title={services[2].title}
             description={services[2].description}
           />
         </div>
-        <div className="text-3xl mt-16 font-bold text-start font-roboto">
+  </div>
+  <div className="sm:col-span-8 sm:ml-10">
+  <div className="mt-10 sm:mt-0">
+          <BorderedImage/>
+        </div>
+  </div>
+</div>
+        <div className="flex flex-col sm:items-center sm:mt-28">
+        <div className="sm:text-4xl text-3xl mt-16 font-bold text-start font-roboto">
           Reach Out to Us
         </div>
-        <div className="text-start mt-4 text-gray-700">
+        <div className="text-start sm:mt-7 mt-4 text-gray-700 text-lg">
           We're here to support you and your loved ones. Get in touch to learn
           more about our services.
         </div>
-        <div className="mt-10">
+        <div className="mt-10 sm:mt-16">
           <ButtonTile
             icon={inquiries[0].icon}
             title={inquiries[0].title}
             description={inquiries[0].description}
             buttonText={inquiries[0].buttonText}
           />
-          <div className="mt-10" />
+          <div className="mt-10 sm:mt-16" />
           <ButtonTile
             icon={inquiries[1].icon}
             title={inquiries[1].title}
@@ -263,17 +281,23 @@ function App() {
           />
         </div>
 
-      <div className="mt-16"/>
-      <RoundedImg imgLocation="src/assets/nurse_img.jpg"/>
-        <div className="mt-8 text-start font-bold text-green-500">
+        </div>
+        
+      <div className="mt-16 sm:mt-48"/>
+      <div className="sm:grid sm:grid-cols-12">
+        <div className="col-span-5 sm:mr-10">
+        <RoundedImg imgLocation="src/assets/nurse_img.jpg"/>
+        </div>
+        <div className="col-span-7 sm:ml-10">
+        <div className="sm:text-xl mt-8 font-bold text-green-500">
           COMMON QUESTIONS
         </div>
-        <div className="text-4xl font-bold text-start mt-2">
+        <div className="sm:text-5xl text-4xl font-bold text-start mt-2">
           Frequently Asked Questions
         </div>
 
         <div
-          className="mt-5"
+          className="mt-5 sm:mt-10"
           id="accordion-flush"
           data-accordion="collapse"
           data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
@@ -282,7 +306,7 @@ function App() {
           <h2 id="accordion-flush-heading-1">
             <button
               type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              className="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3 sm:text-lg"
               data-accordion-target="#accordion-flush-body-1"
               aria-expanded="true"
               aria-controls="accordion-flush-body-1"
@@ -327,7 +351,7 @@ function App() {
           <h2 id="accordion-flush-heading-2">
             <button
               type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3 sm:text-lg"
               data-accordion-target="#accordion-flush-body-2"
               aria-expanded="false"
               aria-controls="accordion-flush-body-2"
@@ -372,7 +396,7 @@ function App() {
           <h2 id="accordion-flush-heading-3">
             <button
               type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+              className="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3 sm:text-lg"
               data-accordion-target="#accordion-flush-body-3"
               aria-expanded="false"
               aria-controls="accordion-flush-body-3"
@@ -415,14 +439,18 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
+      
+        </div>
+      
         <div className=" bg-green-200 mt-16 -m-5 text-center p-10 ">
-              <div className="text-gray-500 text-sm">
+              <div className="text-gray-500 text-sm sm:text-lg">
                 2024 HummbleCare. All rights reserved.
               </div>
-              <div className="mt-8 text-sm">
+              <div className="mt-8 text-sm sm:text-lg">
                 Our Services
               </div>
-              <div className="mt-5 text-sm">
+              <div className="mt-5 text-sm sm:text-lg">
                 Support
               </div>
               <div className="flex items-center justify-center">
@@ -434,6 +462,7 @@ function App() {
       fill="currentColor"
       height="1em"
       width="1em"
+      className="size-6 sm:size-8"
     >
       <path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z" />
     </svg>
@@ -442,7 +471,7 @@ function App() {
       fill="currentColor"
       height="1em"
       width="1em"
-      className="mx-5"
+      className="mx-5 size-6 sm:size-8"
     >
       <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0014.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
     </svg>
@@ -451,6 +480,7 @@ function App() {
       fill="currentColor"
       height="1em"
       width="1em"
+      className="size-6 sm:size-8"
     >
       <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" />
       <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" />

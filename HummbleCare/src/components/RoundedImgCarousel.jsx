@@ -23,7 +23,7 @@ const ImageCarousel = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-72 w-full max-w-2xl mx-auto overflow-hidden rounded-2xl">
+    <div className="relative h-72 sm:h-120 w-full max-w-2xl mx-auto overflow-hidden rounded-2xl">
       <div
         className="flex transition-transform ease-in-out duration-1000"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -33,7 +33,7 @@ const ImageCarousel = () => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover sm:object-contain"
           />
         ))}
       </div>

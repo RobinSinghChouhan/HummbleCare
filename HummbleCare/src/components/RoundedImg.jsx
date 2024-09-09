@@ -1,5 +1,5 @@
 export const RoundedImg = ({imgLocation}) => {
-    return <div className="h-72 rounded-2xl overflow-hidden">
+    return <div className="sm:h-160 h-72 rounded-2xl overflow-hidden">
         
         <img
         src={imgLocation}
