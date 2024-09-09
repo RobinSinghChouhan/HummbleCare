@@ -8,6 +8,10 @@ export function InquireForm({ isDialogOpen, handleOpen }) {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [inquiry, setInquiry] = useState("");
+  const [validFullName,setValidFullName] = useState(true);
+  const [validEmail,setValidEmail] = useState(true);
+  const [validMobile,setValidMobile] = useState(true);
+  const [validInquiry,setValidInquiry] = useState(true);
 
   if (!isDialogOpen) {
     return null;
@@ -79,13 +83,33 @@ export function InquireForm({ isDialogOpen, handleOpen }) {
                   setInquiry(e.target.value);
                 }}
               />
+              {(validFullName && validEmail && validMobile && validInquiry) ? <div>
+              </div> : <div>
+                Error
+              </div>}
               <div className="text-2xl mt-5 mb-5">
                 <div className="cursor-pointer hover:bg-gray-600 flex rounded-lg bg-gray-700 p-2 text-base text-white font-roboto font-normal justify-center"
                 onClick={()=>{
+                  setValidFullName(true);
+                  setValidEmail(true);
+                  setValidMobile(true);
+                  setValidInquiry(true);
                   console.log("FULLNAME: "+fullName);
                   console.log("EMAIL: "+email);
                   console.log("Mobile: "+mobile);
                   console.log("Inquiry: "+inquiry);
+                  if(fullName.length==0)
+                  {
+                    setValidFullName(false);
+                  }
+                  if(!email.includes("@"))
+                  {
+                    setValidEmail(false);
+                  }
+                  if(inquiry.length==0)
+                  {
+                    setValidInquiry(false);
+                  }
                 }}>
                   <div>Submit Inquiry</div>
                   <div className="w-2" />
