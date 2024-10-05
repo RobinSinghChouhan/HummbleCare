@@ -1,9 +1,8 @@
 export const SquibblyLines = ()=>{
     return <div className="flex w-28 h-3 sm:w-36 sm:h-6">
           <svg
-  className="block m-0 p-0"
-  width="10p0%"
-  height="15 sm:20"
+  className="block m-0 p-0 h-15 sm:h-20"
+  width="100%"
   viewBox="0 0 100 20"
   overflow="hidden"
   preserveAspectRatio="none"
@@ -17,9 +16,8 @@ export const SquibblyLines = ()=>{
   />
 </svg>
 <svg
-  className="block m-0 p-0"
+  className="block m-0 p-0 h-15 sm:h-20"
   width="100%"
-  height="15 sm:20"
   viewBox="0 0 100 20"
   preserveAspectRatio="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -32,9 +30,8 @@ export const SquibblyLines = ()=>{
   />
 </svg>
 <svg
-  className="block m-0 p-0"
+  className="block m-0 p-0 h-15 sm:h-20"
   width="100%"
-  height="15 sm:20"
   viewBox="0 0 100 20"
   preserveAspectRatio="none"
   xmlns="http://www.w3.org/2000/svg"

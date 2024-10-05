@@ -29,6 +29,9 @@ export default {
       },
       colors:{
         'logo-color': '#379A16'
+      },
+      border:{
+        width:1
       }
     },
   },
