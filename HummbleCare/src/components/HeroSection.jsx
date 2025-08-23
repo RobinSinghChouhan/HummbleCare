@@ -1,39 +1,41 @@
 import FilledIconLabel from "./FilledIconLabel";
-import { Heart, Shield } from "lucide-react";
+import { ArrowRight, Heart, Shield } from "lucide-react";
 import RoundedIconBtn from "./RoundedIconBtn";
 import RoundedBtn from "./RoundedBtn";
 import IconLabel from "./IconLabel";
 import Carousel from "./Carousel";
 function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50 overflow-hidden">
+    <section className="pt-10 sm:pt-20 relative bg-gradient-to-br from-green-50 via-white to-green-50 overflow-hidden overflow-x-hidden ">
     <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
+        <div className="absolute top10 sm:top-20 right-10 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000" />
       </div>
-      <div className="flex justify-between">
-<div className="relative px-10 py-16 min-w-fit  w-7/12">
+      <div className="grid grid-rows-2 sm:flex sm:justify-between">
+<div className="relative px-5 sm:px-10 py-8 sm:py-16 w-full sm:w-3xl ">
       <FilledIconLabel Icon={Heart} label={"Trusted Healthcare"}/>
-      <div className="mt-10 text-7xl font-medium">
+      <div className="mt-5 sm:mt-10 text-5xl sm:text-7xl font-medium">
         <p>Compassionate</p>
-        <p className="text-green-500 my-4">Elderly Care</p>
+        <p className="text-green-500 my-2 sm:my-4">Elderly Care</p>
         <p>at Home</p>
       </div>
-      <p className="text-gray-800 mt-10 text-xl max-w-2xl mb-10">
+      <p className="text-gray-800 mt-5 sm:mt-10 text-md sm:text-xl max-w-2xl mb-5 sm:mb-10">
         Professional healthcare services designed specifically for seniors, providing dignity, comfort, and peace of mind for families.
       </p>
-      <div className="flex gap-5">
+      <div className="flex gap-2 sm:gap-5 mr-10 sm:mr-0">
+      <div className="w-3xs sm:w-xl">
 
-      <RoundedIconBtn/>
+      <RoundedIconBtn IconLabel={ArrowRight} label={"Get Care Information"}/>
+      </div>
       <RoundedBtn/>
      
       </div>
- <div className="mt-14 gap-10 flex">
+ <div className="mt-5 sm:mt-14 gap-5 sm:gap-10 flex ">
         <IconLabel Icon={Shield} label={"License & Insured"}/>
         <IconLabel Icon={Heart} label={"24/7 Support"}/>
       </div>
     </div>
-<div className="flex w-5/12  items-center">
+<div className="flex w-full sm:w-5/12 items-start sm:items-center pb-10">
         <Carousel/>
     </div>
       </div>

@@ -32,18 +32,18 @@ const metrics = [
 
 function Community() {
     return <div>
-        <div className="py-20 bg-gradient-to-br from-green-50 to-green-300 justify-items-center">
-            <p className="text-5xl font-semibold">Trusted by Families across the Community</p>
-            <p className="mt-10 text-2xl text-gray-600">Our Commitment to excellence shows in every aspect of our care services.</p>
-            <div className="grid grid-cols-4 mt-14 gap-18">
+        <div className="px-5 py-10 sm:py-20 bg-gradient-to-br from-0 to-green-100 justify-items-center text-center">
+            <p className="text-2xl sm:text-5xl font-semibold">Trusted by Families across the Community</p>
+            <p className="mt-5 sm:mt-10 text-md sm:text-2xl text-gray-600">Our Commitment to excellence shows in every aspect of our care services.</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 mt-5 sm:mt-14 gap-8 sm:gap-18">
                 {metrics.map((metric)=>(
-                    <div className="py-5 px-10  justify-items-center">
-                        <div className="shadow-xl bg-white h-18 w-18 rounded-2xl p-5 justify-items-center">
+                    <div className="py-2 sm:py-5 px-5 sm:px-10  justify-items-center">
+                        <div className="shadow-xl bg-white h-12 w-12 sm:h-18 sm:w-18 rounded-2xl p-2 sm:p-5 justify-items-center">
                             <metric.icon className="text-green-700 w-full h-full"/>
                         </div>
-                        <p className="text-3xl mt-5 font-semibold">{metric.heading}</p>
-                        <p className="text-2xl text-gray-800">{metric.title}</p>
-                        <p className="text-xl text-gray-700 text-center">{metric.description}</p>
+                        <p className="text-xl sm:text-3xl mt-5 font-semibold">{metric.heading}</p>
+                        <p className="text-lg sm:text-2xl text-gray-800">{metric.title}</p>
+                        <p className="text-md sm:text-xl text-gray-700 text-center">{metric.description}</p>
                     </div>
                 ))}
             </div>

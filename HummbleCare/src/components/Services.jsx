@@ -8,7 +8,7 @@ const services = [
     icon: Heart,
     title: "Personal Care",
     description:
-      "Assistance with daily activities, medication management, and health monitoring",
+      "Assistance with daily activities, medication, and health monitoring.",
     points: [
       "Medication reminders",
       "Personal hygiene",
@@ -56,18 +56,19 @@ const services = [
 
 function Services() {
   return (
-    <div className="py-20">
-      <div className="flex-col justify-items-center">
+    <div className="py-10 sm:py-20 h-fit">
+      <div className="justify-items-center">
         <FilledIconLabel Icon={Shield} label={"Our Services"} />
 
-        <p className="mt-8 text-5xl font-semibold">
+        <p className="mt-4 sm:mt-8 text-2xl sm:text-5xl font-semibold">
           Comprehensive Care Solutions
         </p>
-        <p className="mt-8 text-xl w-200 text-center text-gray-700">
+        <p className="px-5 mt-4 sm:mt-8 text-md sm:text-xl w-full sm:w-200 text-center text-gray-700">
           From personal care to medical support, we provide everything your
           loved ones need to live comfortably and safely at home
         </p>
-        <div className="grid grid-cols-4 mt-14 px-10 gap-8 ">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-4 mt-7 sm:mt-14 px-10 gap-4 sm:gap-8 ">
           {services.map((service) => (
             <ServiceCard
               Icon={service.icon}

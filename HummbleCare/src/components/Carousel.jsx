@@ -31,7 +31,7 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-green-50 mr-10 w-full h-11/12">
+    <div className="relative overflow-hidden rounded-3xl bg-green-50 mx-5 sm:mx-10 w-full h-full">
       <div className="absolute inset-0 justify-center">
         
             {labels.map((item, i) => (
@@ -50,16 +50,16 @@ function Carousel() {
 
       <div className="bg-gradient-to-b from-transparent to-gray-900/70 z-10 absolute inset-0 justify-between h-full" />
 
-      <div className="z-20 absolute inset-0 justify-between h-11/12 px-10">
+      <div className="z-20 absolute inset-0 justify-between h-9/12 sm:h-11/12 px-5 sm:px-10">
         
-        <div className="h-13/15"></div>
-        <div className="z-20 h-2/15 text-white">
+        <div className="h-14/15 sm:h-13/15"></div>
+        <div className="z-20 h-0/15 sm:h-2/15 text-white">
         
             <div className="absolute transition-opacity duration-1000 ease-in-out">
-          <p className="text-4xl font-medium opacity-80 ">
+          <p className="text-2xl sm:text-4xl font-medium opacity-80 ">
             {labels[index].title}
           </p>
-          <p className="text-2xl mt-2 opacity-80 text-green-100">
+          <p className="text-xl sm:text-2xl mt-2 opacity-80 text-green-100 pr-5 sm:pr-0">
             {labels[index].description}
           </p>
           </div>
