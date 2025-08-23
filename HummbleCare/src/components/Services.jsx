@@ -1,4 +1,4 @@
-import { Heart, Home, icons, Phone, Shield, Stethoscope } from "lucide-react";
+import { Heart, Home, Phone, Shield, Stethoscope } from "lucide-react";
 import IconLabel from "./IconLabel";
 import FilledIconLabel from "./FilledIconLabel";
 import ServiceCard from "./ServiceCard";
@@ -68,7 +68,7 @@ function Services() {
           loved ones need to live comfortably and safely at home
         </p>
         <div className="grid grid-cols-4 mt-14 px-10 gap-8 ">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <ServiceCard
               Icon={service.icon}
               title={service.title}

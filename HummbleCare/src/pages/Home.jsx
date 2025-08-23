@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
 import NavBar from "../components/NavBar";
+import Community from "../components/Community";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <NavBar/>
       <HeroSection/>
       <Services/>
+      <Community/>
     </div>
   );
 }
