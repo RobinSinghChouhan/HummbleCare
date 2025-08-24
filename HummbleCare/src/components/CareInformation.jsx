@@ -32,7 +32,7 @@ function CareInformation() {
           <FilledIconLabel Icon={Mail} label={"Get Informaion"} />
         </div>
         <div className="text-center justify-items-center">
-          <p className="text-3xl sm:text-5xl mt-5 sm:mt-10 font-semibold">
+          <p className="text-2xl sm:text-5xl mt-5 sm:mt-10 font-semibold">
             Request Care Information
           </p>
           <p className="mt-4 sm:mt-8 text-md sm:text-xl text-gray-700 w-full">

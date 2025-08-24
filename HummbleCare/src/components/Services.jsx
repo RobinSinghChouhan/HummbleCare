@@ -57,7 +57,7 @@ const services = [
 function Services() {
   return (
     <div className="py-10 sm:py-20 h-fit">
-      <div className="justify-items-center">
+      <div className="flex flex-col items-center justify-items-center">
         <FilledIconLabel Icon={Shield} label={"Our Services"} />
 
         <p className="mt-4 sm:mt-8 text-2xl sm:text-5xl font-semibold">

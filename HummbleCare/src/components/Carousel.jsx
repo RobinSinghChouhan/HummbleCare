@@ -56,7 +56,7 @@ function Carousel() {
         <div className="z-20 h-0/15 sm:h-2/15 text-white">
         
             <div className="absolute transition-opacity duration-1000 ease-in-out">
-          <p className="text-2xl sm:text-4xl font-medium opacity-80 ">
+          <p className="text-2xl sm:text-4xl font-medium  ">
             {labels[index].title}
           </p>
           <p className="text-xl sm:text-2xl mt-2 opacity-80 text-green-100 pr-5 sm:pr-0">

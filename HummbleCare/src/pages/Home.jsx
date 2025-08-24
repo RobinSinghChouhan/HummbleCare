@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Community from "../components/Community";
 import Testimonials from "../components/Testimonials";
 import CareInformation from "../components/CareInformation";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
        <Community/> 
       <Testimonials/>
       <CareInformation/> 
+      <Footer/>
     </div>
   );
 }
