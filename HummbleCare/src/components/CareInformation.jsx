@@ -45,8 +45,8 @@ function CareInformation() {
           <div className="mt-10 mx-5 sm:mx-0 sm:ml-10">
             <p className="text-lg sm:text-2xl font-semibold">Get in Touch</p>
             <div className="mt-5 sm:mt-10">
-                {contactInfo.map((contact)=>(
-                    <ContactComponent Icon={contact.Icon} title={contact.title} text={contact.text} subtext={contact.subtext}/>
+                {contactInfo.map((contact,i)=>(
+                    <ContactComponent key={i} Icon={contact.Icon} title={contact.title} text={contact.text} subtext={contact.subtext}/>
                 ))}
             </div>
           </div>

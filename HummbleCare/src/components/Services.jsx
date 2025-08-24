@@ -69,8 +69,9 @@ function Services() {
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-4 mt-7 sm:mt-14 px-10 gap-4 sm:gap-8 ">
-          {services.map((service) => (
+          {services.map((service,i) => (
             <ServiceCard
+            key={i}
               Icon={service.icon}
               title={service.title}
               description={service.description}

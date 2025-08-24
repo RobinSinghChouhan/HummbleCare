@@ -30,8 +30,8 @@ function Testimonials() {
             <p className="text-2xl sm:text-5xl font-semibold mt-5 sm:mt-10">What Families Say About Us</p>
             <p className="text-center px-5 mt-4 sm:mt-8 text-md sm:text-xl text-gray-700">Real stories from families who trust us with their loved ones' care.</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-10 mt-10 w-full px-5 sm:px-10">
-                {reviews.map((review)=>(
-                    <ReviewCard stars={review.stars} description={review.description} name={review.name} subtext={review.subtext}/>
+                {reviews.map((review,i)=>(
+                    <ReviewCard key={i} stars={review.stars} description={review.description} name={review.name} subtext={review.subtext}/>
                 ))}
             </div>
         </div>

@@ -18,7 +18,7 @@ function ReviewCard({stars,description,name,subtext}) {
     const starElement = [];
     for(let i=0;i<stars;i++)
     {
-        starElement.push(<Star stroke="2" fill="oklch(85.2% 0.199 91.936)" className="text-yellow-500 w-4 h-4 sm:w-7 sm:h-7 mr-2"/>)
+        starElement.push(<Star key={i} stroke="2" fill="oklch(85.2% 0.199 91.936)" className="text-yellow-500 w-4 h-4 sm:w-7 sm:h-7 mr-2"/>)
     }
 
     return <div className="border-[1.5px] border-green-200 p-5 sm:p-10 rounded-2xl hover:scale-103 hover:shadow-xl transition-all duration-300">

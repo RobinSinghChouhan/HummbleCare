@@ -9,8 +9,8 @@ function ServiceCard({Icon, title, description, points}) {
             <p className="mt-5 text-lg sm:text-xl font-semibold">{title}</p>
             <p className="mt-2 text-lg sm:text-xl text-gray-700">{description}</p>
             <div>
-            {points.map((point)=>(
-                <div className="flex items-center mt-2 sm:mt-5 text-md sm:text-lg text-gray-700">
+            {points.map((point,i)=>(
+                <div key={i} className="flex items-center mt-2 sm:mt-5 text-md sm:text-lg text-gray-700">
                     <div className="w-1 h-1 sm:w-2 sm:h-2 bg-green-600 rounded-xl mr-3"/>
                     <p>{point}</p>
                 </div>

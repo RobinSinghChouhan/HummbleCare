@@ -49,21 +49,21 @@ function Footer() {
                 <div className="mt-10 sm:mt-0 flex-2 w-full flex">
                 <div className="w-full sm:pl-20">
                     <p className="text-lg sm:text-2xl text-white font-semibold mb-5 sm:mb-10">Our Services</p>
-                    {services.map((service)=>(
-                        <p className="text-md sm:text-xl text-gray-400 mb-2 sm:mb-4">{service}</p>
+                    {services.map((service,i)=>(
+                        <p key={i} className="text-md sm:text-xl text-gray-400 mb-2 sm:mb-4">{service}</p>
                     ))}
                 </div>
                 <div className="w-full pl-10 sm:pl-20">
                     <p className="text-lg sm:text-2xl text-white font-semibold mb-5 sm:mb-10">Quick Links</p>
-                    {links.map((link)=>(
-                        <p className="text-md sm:text-xl text-gray-400 mb-2 sm:mb-4">{link}</p>
+                    {links.map((link,i)=>(
+                        <p key={i} className="text-md sm:text-xl text-gray-400 mb-2 sm:mb-4">{link}</p>
                     ))}
                 </div>
                 </div>
                 <div className="mt-10 sm:mt-0 w-full flex-1">
                     <p className="text-lg sm:text-2xl text-white font-semibold mb-5 sm:mb-10">Contact Us</p>
-                    {contacts.map((contact)=>(
-                        <div className="flex mb-3 sm:mb-5">
+                    {contacts.map((contact,i)=>(
+                        <div key={i} className="flex mb-3 sm:mb-5">
                             <div className="flex items-center">
                             <contact.icon className="w-4 h-4 sm:w-7 sm:h-7 text-green-500"/>
                             </div>
