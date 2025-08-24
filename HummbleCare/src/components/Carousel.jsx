@@ -37,7 +37,7 @@ function Carousel() {
             {labels.map((item, i) => (
           <img
             key={item.image}
-            src={`src/assets/${item.image}`}
+            src={`/${item.image}`}
             alt={item.title}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out
               ${i === index ? "opacity-100" : "opacity-0"}`}

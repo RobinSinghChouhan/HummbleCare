@@ -2,7 +2,7 @@ function NavBar() {
     return <nav className="bg-white fixed border-b-1 py-1 border-green-500 z-40 w-full">
         <div className="flex justify-center sm:justify-between mx-5 sm:mx-10 items-center">
           <div className="flex items-center text-3xl font-bold">
-            <img src="src/assets/tagline.png" className="h-10 sm:h-18"/>
+            <img src="/tagline.png" className="h-10 sm:h-18"/>
             </div>
           <div className="hidden md:flex gap-10 text-xl items-center text-gray-700 font-medium ">
             <div className="hover:cursor-pointer hover:text-green-600">Services</div>
