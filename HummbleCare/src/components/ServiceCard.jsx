@@ -2,7 +2,7 @@ import { Circle, CircleDot, CircleSmall } from "lucide-react";
 
 function ServiceCard({Icon, title, description, points}) {
     return <div>
-        <div className="group border-[1.5px] border-green-200 hover:border-green-300 hover:scale-102 hover:shadow-2xl transition-all duration-300 rounded-2xl p-5 sm:p-10">
+        <div className="h-full group border-[1.5px] border-green-200 hover:border-green-300 hover:scale-102 hover:shadow-2xl transition-all duration-300 rounded-2xl p-5 sm:p-10">
             <div className="bg-gradient-to-br from-green-400 to-green-700 w-10 h-10 sm:w-16 sm:h-16 group-hover:scale-110 transition-all duration-300 p-2 sm:p-4 rounded-2xl">
                 <Icon className="text-white w-full h-full"/>
             </div>

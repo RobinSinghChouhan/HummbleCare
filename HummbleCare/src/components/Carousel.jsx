@@ -48,15 +48,15 @@ function Carousel() {
         
       </div>
 
-      <div className="bg-gradient-to-b from-transparent to-gray-900/70 z-10 absolute inset-0 justify-between h-full" />
+      <div className="bg-gradient-to-b from-transparent to-gray-900/70 z-10 absolute inset-0 justify-between h-full " />
 
-      <div className="z-20 absolute inset-0 justify-between h-9/12 sm:h-11/12 px-5 sm:px-10">
+      <div className="z-20 absolute inset-0 justify-between h-9/12 sm:h-13/15 px-3 sm:px-8 ">
         
         <div className="h-14/15 sm:h-13/15"></div>
-        <div className="z-20 h-0/15 sm:h-2/15 text-white">
+        <div className="z-20 text-white w-fit">
         
-            <div className="absolute transition-opacity duration-1000 ease-in-out">
-          <p className="text-2xl sm:text-4xl font-medium  ">
+            <div className="transition-opacity duration-1000 ease-in-out ">
+          <p className="text-xl sm:text-3xl font-medium  ">
             {labels[index].title}
           </p>
           <p className="text-xl sm:text-2xl mt-2 opacity-80 text-green-100 pr-5 sm:pr-0">
