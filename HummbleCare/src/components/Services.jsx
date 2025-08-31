@@ -56,7 +56,7 @@ const services = [
 
 function Services() {
   return (
-    <div className="py-10 sm:py-20 h-fit">
+    <div className="py-5 sm:py-20 h-fit">
       <div className="flex flex-col items-center justify-items-center">
         <FilledIconLabel Icon={Shield} label={"Our Services"} />
 
@@ -68,7 +68,7 @@ function Services() {
           loved ones need to live comfortably and safely at home
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-4 mt-7 sm:mt-14 px-10 gap-4 sm:gap-8 ">
+        <div className="grid grid-cols-1 sm:grid-cols-4 mt-7 sm:mt-14 px-10 gap-2 sm:gap-5 ">
           {services.map((service,i) => (
             <ServiceCard
             key={i}
