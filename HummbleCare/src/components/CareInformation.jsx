@@ -4,23 +4,23 @@ import InformaionForm from "./InformationForm";
 import ContactComponent from "./ContactComponent";
 
 const contactInfo = [
-  {
-    Icon: Phone,
-    title: "Call Us",
-    text: "Available 24/7 for emergencies",
-    subtext: "(555) 123-CARE",
-  },
+  // {
+  //   Icon: Phone,
+  //   title: "Call Us",
+  //   text: "Available 24/7 for emergencies",
+  //   subtext: "(555) 123-CARE",
+  // },
   {
     Icon: Mail,
     title: "Email Us",
     text: "We'll respond within 2 hours",
-    subtext: "info@hummblecare.com",
+    subtext: "hummblecare8@gmail.com",
   },
   {
     Icon: Map,
     title: "Visit Us",
     text: "Main office location",
-    subtext: "123 Healthcare Blvd Care City, CA 90210",
+    subtext: "27 Liverpool St, Point Cook VIC 3030",
   },
 ];
 
