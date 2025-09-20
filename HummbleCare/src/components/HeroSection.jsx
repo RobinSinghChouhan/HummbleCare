@@ -25,7 +25,7 @@ function HeroSection() {
       </p>
       <div className="flex gap-2 sm:gap-5 mr-5 sm:mr-0">
       <div className="w-full sm:w-xl">
-      <RoundedIconBtn IconLabel={ArrowRight} label={"Get Care Information"}/>
+      <RoundedIconBtn Icon={ArrowRight} label={"Get Care Information"}/>
       </div>
       <RoundedBtn/>
      

@@ -16,12 +16,7 @@ const contactInfo = [
     text: "We'll respond within 2 hours",
     subtext: "hummblecare8@gmail.com",
   },
-  {
-    Icon: Map,
-    title: "Visit Us",
-    text: "Main office location",
-    subtext: "27 Liverpool St, Point Cook VIC 3030",
-  },
+  
 ];
 
 function CareInformation() {

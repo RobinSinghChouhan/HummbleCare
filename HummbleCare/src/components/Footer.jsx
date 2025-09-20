@@ -17,20 +17,13 @@ const links = [
 ]
 
 const contacts = [
-    {
-        icon: Phone,
-        detail: "(555) 123-CARE"
-    },
+    
 
     {
         icon: Mail,
-        detail: "info@hummblecare.com"
+        detail: "hummblecare8@gmail.com"
     },
 
-    {
-        icon: Map,
-        detail: "123 Healthcare Blvd Care City, CA 90210"
-    }
 ]
 
 function Footer() {

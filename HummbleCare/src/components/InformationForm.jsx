@@ -77,7 +77,7 @@ const handleForm = () => {
                    setFullName(e.target.value) 
                 )}
                 id="default-input"
-                placeholder="Robin Singh Chouhan"
+                placeholder="Enter Full Name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm sm:text-lg rounded-lg focus:outline-none focus:border-[1.5px] focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
               />
             </div>
@@ -91,7 +91,7 @@ const handleForm = () => {
                 onChange={(e)=>(
                    setMobile(e.target.value) 
                 )}
-                placeholder="0449972775"
+                placeholder="Phone Number"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm sm:text-lg rounded-lg focus:outline-none focus:border-[1.5px] focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
               />
             </div>
@@ -107,7 +107,7 @@ const handleForm = () => {
                 onChange={(e)=>(
                    setEmail(e.target.value) 
                 )}
-              placeholder="email@gmail.com"
+              placeholder="Please enter email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm sm:text-lg rounded-lg focus:outline-none focus:border-[1.5px] focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
             />
           </div>
@@ -177,7 +177,7 @@ const handleForm = () => {
             </div>
           </div>
           <div className="mt-5 sm:mt-10">
-            <RoundedIconBtn onClick={handleForm} IconLabel={Send} label={"Send Information Request"}/>
+            <RoundedIconBtn onClick={handleForm} Icon={Send} label={"Send Information Request"}/>
           </div>
         </div>
       </div>
