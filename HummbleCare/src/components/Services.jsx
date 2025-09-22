@@ -5,21 +5,12 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    icon: Briefcase,
-    title: "Employment Support",
-    description: "Help with accessing and maintaining employment opportunities.",
-    points: [
-      "0102 – Assist Access / Maintain Employment",
-      "0133 – Specialised Supported Employment",
-    ],
-  },
-  {
     icon: Heart,
     title: "Personal Care",
     description: "Support for personal daily routines, including high-intensity needs.",
     points: [
-      "0104 – Assist Personal Activities High",
-      "0107 – Assist Personal Activities",
+      "Assist Personal Activities High",
+      "Assist Personal Activities",
     ],
   },
   {
@@ -27,8 +18,8 @@ const services = [
     title: "Life Skills & Transitions",
     description: "Guidance for major life stages and development of independent living skills.",
     points: [
-      "0106 – Assist Life Stage, Transition",
-      "0117 – Development – Life Skills",
+      "Assist Life Stage, Transition",
+      "Development – Life Skills",
     ],
   },
   {
@@ -36,7 +27,7 @@ const services = [
     title: "Health & Nursing Care",
     description: "Professional nursing and health-related supports.",
     points: [
-      "0114 – Community Nursing Care",
+      "Community Nursing Care",
     ],
   },
   {
@@ -44,8 +35,8 @@ const services = [
     title: "Daily Living & Household",
     description: "Practical help for shared living and household management.",
     points: [
-      "0115 – Daily Tasks / Shared Living",
-      "0120 – Household Tasks",
+      "Daily Tasks / Shared Living",
+      "Household Tasks",
     ],
   },
   {
@@ -53,9 +44,18 @@ const services = [
     title: "Community Participation",
     description: "Support to engage in community, social, and group activities.",
     points: [
-      "0116 – Innovative Community Participation",
-      "0125 – Participate Community",
-      "0136 – Group / Centre Activities",
+      "Innovative Community Participation",
+      "Participate Community",
+      "Group / Centre Activities",
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Employment Support",
+    description: "Help with accessing and maintaining employment opportunities.",
+    points: [
+      "Assist Access / Maintain Employment",
+      "Specialised Supported Employment",
     ],
   },
 ];

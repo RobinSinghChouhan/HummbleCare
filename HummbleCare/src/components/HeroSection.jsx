@@ -14,14 +14,14 @@ function HeroSection() {
       <div className="grid grid-rows-2 sm:grid-rows-1 sm:flex sm:justify-between">
 <div className="mx-5 relative sm:px-10 pb-5 sm:pb-10 sm:w-2xl ">
      
-      <FilledIconLabel Icon={Heart} label={"Trusted Healthcare"}/>
-      <div className="mt-2 sm:mt-6 text-5xl sm:text-7xl font-medium">
-        <p>Compassionate</p>
-        <p className="text-green-500 my-2 sm:my-4">Elderly Care</p>
-        <p>at Home</p>
+      <FilledIconLabel Icon={Heart} label={"NDIS Registered Services"}/>
+      <div className="mt-2 sm:mt-6 text-5xl sm:text-6xl font-semibold">
+        <p className=""> Supporting Every</p>
+        <p className="text-green-500 my-2 sm:my-4">Ability with Dignity</p>
+        <p className="">at Home & Beyond</p>
       </div>
       <p className="  text-gray-800 mt-5 sm:mt-10 text-md sm:text-xl mb-5 sm:mb-10 ">
-        Professional healthcare services designed specifically for seniors, providing dignity, comfort, and peace of mind for families.
+        Professional disability support services designed to empower individuals, promoting dignity, independence, and peace of mind for families.
       </p>
       <div className="flex gap-2 sm:gap-5 mr-5 sm:mr-0">
       <div className="w-full sm:w-xl">
