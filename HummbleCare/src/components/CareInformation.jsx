@@ -31,8 +31,7 @@ function CareInformation() {
             Request Care Information
           </p>
           <p className="mt-4 sm:mt-8 text-md sm:text-xl text-gray-700 w-full">
-            Let us know how we can help. Our care coordinators will create a
-            personalized care plan for your loved one.
+            Let us know how we can help — our care coordinators are here for you. Simply fill out the form to get started.
           </p>
         </div>
         <div className="sm:flex mt-5 sm:mt-10">

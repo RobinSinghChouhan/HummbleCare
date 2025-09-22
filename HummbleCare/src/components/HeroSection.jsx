@@ -14,7 +14,7 @@ function HeroSection() {
       <div className="grid grid-rows-2 sm:grid-rows-1 sm:flex sm:justify-between">
 <div className="mx-5 relative sm:px-10 pb-5 sm:pb-10 sm:w-2xl ">
      
-      <FilledIconLabel Icon={Heart} label={"NDIS Registered Services"}/>
+      <img src="/ndis_logo.jpg" className="h-10 sm:h-16 ml-2"/>
       <div className="mt-2 sm:mt-6 text-5xl sm:text-6xl font-semibold">
         <p className=""> Supporting Every</p>
         <p className="text-green-500 my-2 sm:my-4">Ability with Dignity</p>

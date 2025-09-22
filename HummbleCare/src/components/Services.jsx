@@ -72,7 +72,7 @@ function Services() {
         </p>
         <p className="px-5 mt-4 sm:mt-8 text-md sm:text-xl w-full sm:w-200 text-center text-gray-700">
           From personal care to medical support, we provide everything your
-          loved ones need to live comfortably and safely at home
+          loved ones need to live comfortably and safely at home and community.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 mt-7 sm:mt-14 px-10 gap-2 sm:gap-5 ">

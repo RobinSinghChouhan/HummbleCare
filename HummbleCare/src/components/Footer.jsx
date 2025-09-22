@@ -37,7 +37,7 @@ function Footer() {
                     </div>
                     <p className="ml-2 text-xl sm:text-4xl font-semibold text-green-500">Hummble Care</p>
                 </div>
-                <p className="mt-5 text-md sm:text-xl text-gray-400">Providing compassionate, professional healthcare services to seniors and their families with dignity, respect, and excellence.</p>
+                <p className="mt-5 text-md sm:text-xl text-gray-400">Providing compassionate, professional disability support services to empower individuals of all ages, promoting dignity, independence, and peace of mind for families.</p>
                 </div>
                 <div className="mt-10 sm:mt-0 flex-2 w-full flex">
                 <div className="w-full sm:pl-20">

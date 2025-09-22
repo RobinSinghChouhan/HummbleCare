@@ -3,9 +3,9 @@ import { Clock, Shield, Star, Users } from "lucide-react";
 const metrics = [
     {
         icon: Users,
-        heading: "2500+",
+        heading: "250+",
         title: "Families Served",
-        description: "Trusted by thousands of families"
+        description: "Trusted by hundreds of families"
     },
 
     {
