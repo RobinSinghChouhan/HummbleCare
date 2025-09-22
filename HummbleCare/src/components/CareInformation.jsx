@@ -4,12 +4,12 @@ import InformaionForm from "./InformationForm";
 import ContactComponent from "./ContactComponent";
 
 const contactInfo = [
-  // {
-  //   Icon: Phone,
-  //   title: "Call Us",
-  //   text: "Available 24/7 for emergencies",
-  //   subtext: "(555) 123-CARE",
-  // },
+  {
+    Icon: Phone,
+    title: "Call Us",
+    text: "Available 24/7 for emergencies",
+    subtext: "(+61)406235095",
+  },
   {
     Icon: Mail,
     title: "Email Us",
