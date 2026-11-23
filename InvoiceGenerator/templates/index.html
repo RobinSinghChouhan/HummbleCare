@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hummble Care Invoice Generator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img src="/static/hummblecare-logo.png" alt="Hummble Care" />
+        <div>
+          <strong>Invoice Generator</strong>
+          <span>Hummble Care</span>
+        </div>
+      </div>
+      <button id="downloadPdf" class="download-button" type="button">Download PDF</button>
+    </header>
+
+    <main class="workspace">
+      <section class="editor-panel" aria-label="Invoice details">
+        <form id="invoiceForm">
+          <details open>
+            <summary>Business details</summary>
+            <div class="field-grid">
+              <label>ABN<input name="abn" value="56 667 512 129" /></label>
+              <label>Address<input name="address" value="27 Liverpool Street, Point Cook VIC 3030" /></label>
+              <label>Email<input name="email" type="email" value="Hummblecare8@gmail.com" /></label>
+              <label>Phone<input name="phone" value="0406 235 095" /></label>
+              <label>Bank name<input name="bankName" value="Commonwealth Bank" /></label>
+              <label>BSB<input name="bsb" value="067 873" /></label>
+              <label>Account number<input name="accountNumber" value="22068085" /></label>
+            </div>
+          </details>
+
+          <details open>
+            <summary>Invoice details</summary>
+            <div class="field-grid">
+              <label>Invoice number<input name="invoiceNumber" value="AS-02" /></label>
+              <label>Invoice date<input name="invoiceDate" type="date" value="2026-11-20" /></label>
+              <label>Payment due date<input name="paymentDueDate" type="date" value="2026-11-20" /></label>
+              <label>Participant name<input name="participantName" value="Anhad Singh" /></label>
+              <label>NDIS number<input name="ndisNumber" value="430781715" /></label>
+              <label>Plan manager / payer<input name="planManager" value="Lead Consulting" /></label>
+            </div>
+          </details>
+
+          <details open>
+            <summary>Service details</summary>
+            <div class="field-grid">
+              <label class="wide">Support provided<input name="supportProvided" value="Allied Health Assistant – Therapy Assistant Level 2" /></label>
+              <label>Date of service<input name="serviceDate" type="date" value="2026-11-20" /></label>
+              <label>AHA / worker name<input name="workerName" value="Sharanjit Kaur" /></label>
+              <label>Supervising therapist<input name="supervisor" value="Maryam" /></label>
+              <label>Service location<input name="serviceLocation" value="56 Amsterdam Avenue, Tarneit" /></label>
+              <label>Next appointment<input name="nextAppointment" value="" /></label>
+            </div>
+          </details>
+
+          <details open>
+            <summary>NDIS support lines</summary>
+            <div id="serviceRows" class="service-rows"></div>
+            <button id="addService" class="secondary-button" type="button">+ Add service</button>
+          </details>
+
+          <details>
+            <summary>Totals</summary>
+            <div class="field-grid">
+              <label>GST amount<input name="gst" type="number" min="0" step="0.01" value="0" /></label>
+              <label>Calculated subtotal<input id="subtotalDisplay" value="$133.76" readonly /></label>
+            </div>
+          </details>
+        </form>
+      </section>
+
+      <section class="preview-panel" aria-label="Invoice PDF preview">
+        <div class="preview-toolbar">
+          <span>PDF Preview</span>
+          <span id="previewStatus">Updating...</span>
+        </div>
+        <iframe id="pdfPreview" title="Invoice PDF preview"></iframe>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

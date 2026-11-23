@@ -1,0 +1,31 @@
+name: Build Windows Invoice Generator
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: InvoiceGenerator
+        run: python -m pip install -r requirements.txt
+
+      - name: Build executable
+        working-directory: InvoiceGenerator
+        run: python -m PyInstaller --noconfirm --clean invoice_generator.spec
+
+      - name: Upload Windows executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: HummbleCare-Invoice-Generator-Windows
+          path: InvoiceGenerator/dist/HummbleCare-Invoice-Generator.exe
