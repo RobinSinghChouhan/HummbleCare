@@ -61,10 +61,10 @@ const services = [
   {
     icon: HeartPulse,
     title: "Allied Health",
-    description: "Therapeutic supports to improve mobility, wellbeing, and independence.",
+    description: "Therapeutic supports to improve wellbeing and independence.",
     points: [
-      "Occupational Therapy",
-      "Physiotherapy",
+      "Behaviour Support",
+      "Speech Specialist",
     ],
   },
 ];

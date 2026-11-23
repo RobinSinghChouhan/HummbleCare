@@ -12,10 +12,12 @@ const [fullName,setFullName] = useState("");
 const [mobile, setMobile] = useState("");
 const [email,setEmail] = useState("");
 const [info,setInfo] = useState("");
+const [isSending,setIsSending] = useState(false);
+const [status,setStatus] = useState("");
 
 
 
-const handleForm = () => {
+const handleForm = async () => {
 
   console.log("Email: "+email)
   console.log("Mobile: "+mobile)
@@ -48,19 +50,31 @@ const handleForm = () => {
     return;
   }
 
-    emailjs
-      .send(import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-      templateParams,
-     import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY)
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+  const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+  if (!serviceId || !templateId || !publicKey) {
+    setStatus("Email service is not configured.");
+    return;
+  }
+
+  setIsSending(true);
+  setStatus("");
+
+  try {
+    await emailjs.send(serviceId, templateId, templateParams, publicKey);
+    setStatus("Information request sent successfully.");
+  } catch (error) {
+    console.error("EmailJS failed:", error);
+    if (error?.text?.includes("Gmail_API") || error?.status === 412) {
+      setStatus("Email provider connection failed. Please reconnect the Gmail service in EmailJS.");
+    } else {
+      setStatus("Unable to send the request. Please try again.");
+    }
+  } finally {
+    setIsSending(false);
+  }
 }
 
   return (
@@ -177,8 +191,11 @@ const handleForm = () => {
             </div>
           </div>
           <div className="mt-5 sm:mt-10">
-            <RoundedIconBtn onClick={handleForm} Icon={Send} label={"Send Information Request"}/>
+            <RoundedIconBtn onClick={handleForm} Icon={Send} label={isSending ? "Sending..." : "Send Information Request"} disabled={isSending}/>
           </div>
+          {status && (
+            <p className="mt-4 text-center text-sm sm:text-lg text-gray-700">{status}</p>
+          )}
         </div>
       </div>
     </div>
