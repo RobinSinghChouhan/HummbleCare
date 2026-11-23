@@ -13,7 +13,7 @@ function getInitial({name}) {
     return val;
 }
 
-function ReviewCard({stars,description,name,subtext}) {
+function ReviewCard({stars,description,name,subtext,focused = false}) {
 
     const starElement = [];
     for(let i=0;i<stars;i++)
@@ -21,7 +21,7 @@ function ReviewCard({stars,description,name,subtext}) {
         starElement.push(<Star key={i} stroke="2" fill="oklch(85.2% 0.199 91.936)" className="text-yellow-500 w-4 h-4 sm:w-7 sm:h-7 mr-2"/>)
     }
 
-    return <div className="border-[1.5px] border-green-200 p-5 sm:p-10 rounded-2xl hover:scale-103 hover:shadow-xl transition-all duration-300">
+    return <div className={`h-full border-[1.5px] border-green-200 p-5 sm:p-8 rounded-2xl transition-all duration-500 ${focused ? "sm:scale-105 shadow-xl border-green-300" : "sm:scale-95 bg-white"}`}>
         <div className="flex">
         {starElement}
         </div>
