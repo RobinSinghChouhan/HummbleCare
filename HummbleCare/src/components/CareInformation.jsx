@@ -21,7 +21,7 @@ const contactInfo = [
 
 function CareInformation() {
   return (
-    <div>
+    <section id="contact" className="scroll-mt-20">
       <div className="py-10 sm:py-20 bg-gradient-to-br from-green-50 via-50% to-green-100 px-5 sm:px-10">
         <div className="flex justify-center">
           <FilledIconLabel Icon={Mail} label={"Get Informaion"} />
@@ -46,7 +46,7 @@ function CareInformation() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

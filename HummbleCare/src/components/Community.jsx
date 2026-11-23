@@ -31,7 +31,7 @@ const metrics = [
 ]
 
 function Community() {
-    return <div>
+    return <section id="about" className="scroll-mt-20">
         <div className="px-5 py-10 sm:py-20 bg-gradient-to-br from-0 to-green-100 justify-items-center text-center">
             <p className="text-2xl sm:text-5xl font-semibold">Trusted by Families across the Community</p>
             <p className="mt-5 sm:mt-10 text-md sm:text-2xl text-gray-600">Our Commitment to excellence shows in every aspect of our care services.</p>
@@ -48,7 +48,7 @@ function Community() {
                 ))}
             </div>
         </div>
-    </div>
+    </section>
 }
 
 export default Community;

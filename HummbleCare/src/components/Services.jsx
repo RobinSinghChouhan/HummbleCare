@@ -1,4 +1,4 @@
-import { Activity, Briefcase, ClipboardCheck, Heart, Home, Phone, Shield, Stethoscope, Users } from "lucide-react";
+import { Activity, Briefcase, Heart, HeartPulse, Home, Shield, Stethoscope, Users } from "lucide-react";
 import FilledIconLabel from "./FilledIconLabel";
 import ServiceCard from "./ServiceCard";
 
@@ -58,12 +58,21 @@ const services = [
       "Specialised Supported Employment",
     ],
   },
+  {
+    icon: HeartPulse,
+    title: "Allied Health",
+    description: "Therapeutic supports to improve mobility, wellbeing, and independence.",
+    points: [
+      "Occupational Therapy",
+      "Physiotherapy",
+    ],
+  },
 ];
 
 
 function Services() {
   return (
-    <div className="py-5 sm:py-20 h-fit">
+    <section id="services" className="py-5 sm:py-20 h-fit scroll-mt-20">
       <div className="flex flex-col items-center justify-items-center">
         <FilledIconLabel Icon={Shield} label={"Our Services"} />
 
@@ -75,19 +84,20 @@ function Services() {
           loved ones need to live comfortably and safely at home and community.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-3 mt-7 sm:mt-14 px-10 gap-2 sm:gap-5 ">
+        <div className="grid grid-cols-1 sm:grid-cols-3 mt-7 sm:mt-14 px-10 gap-2 sm:gap-5">
           {services.map((service,i) => (
-            <ServiceCard
-            key={i}
-              Icon={service.icon}
-              title={service.title}
-              description={service.description}
-              points={service.points}
-            />
+            <div key={i} className={`h-full ${i === services.length - 1 ? "sm:col-start-2" : ""}`}>
+              <ServiceCard
+                Icon={service.icon}
+                title={service.title}
+                description={service.description}
+                points={service.points}
+              />
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
